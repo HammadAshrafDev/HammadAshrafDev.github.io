@@ -1,97 +1,46 @@
-# 🐦 Twitter Sentiment Analysis
+# Data Visualization Portfolio
 
-This project performs **sentiment analysis** on Twitter data using natural language processing (NLP) techniques and machine learning. It classifies tweets as either **positive** or **negative** and visualizes model performance.
+## Overview
+Modern portfolio website showcasing five interactive data visualization projects created with D3.js. Features responsive design, animated elements, and clean presentation of data visualization work.
 
----
+## Features
+- Responsive layout for all devices
+- Animated project cards on scroll
+- Interactive skill bars
+- Gradient header with pattern overlay
+- Project cards with tags and links
+- About section with professional bio
 
-## 🔧 Technologies & Libraries
+## Technologies
+- HTML5
+- CSS3 (with CSS variables)
+- JavaScript (for animations)
+- Font Awesome icons
+- Google Fonts (Poppins)
 
-- Python  
-- `pandas`, `numpy`, `scikit-learn`  
-- `nltk` for NLP  
-- `matplotlib`, `seaborn` for visualization  
-- `Logistic Regression` (used in an ML pipeline)  
+## Projects Included
+1. **TreeMap** - Hierarchical data visualization
+2. **Choropleth Map** - Geographic data visualization  
+3. **HeatMap** - Matrix-style intensity visualization
+4. **ScatterPlot** - Variable relationship visualization
+5. **Bar Chart** - Categorical data comparison
 
----
+## How to Use
+1. Save the HTML code as `index.html`
+2. Open in any modern web browser
+3. Scroll to trigger animations
+4. Click project links to view on CodePen
 
-## 📂 Dataset
+## Customization
+- Replace placeholder images with project screenshots
+- Update social media links
+- Modify skill percentages
+- Adjust color scheme in CSS variables
+- Add/remove projects as needed
 
-The project uses the [Sentiment140 dataset](http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip), which contains **1.6 million labeled tweets**. For efficiency, a **10,000-tweet sample** is used during development.
-
----
-
-## 🚀 Workflow Overview
-
-### 1. **Installation**
-Install the necessary Python libraries:
-
-```bash
-pip install numpy pandas scikit-learn nltk matplotlib seaborn
-```
-
-### 2. **Data Loading**
-Tweets are loaded from `training.1600000.processed.noemoticon.csv`. Sentiments are mapped as:
-- `0` → Negative  
-- `4` → Positive (remapped to `1`)
-
-### 3. **Text Preprocessing**
-- Removal of special characters
-- Lowercasing
-- Stopword removal
-- Lemmatization using `WordNetLemmatizer`
-
-### 4. **Feature Engineering**
-- TF-IDF Vectorization (Top 5000 features)
-- Train-test split (80/20)
-
-### 5. **Model Training**
-A pipeline is used with:
-- `TfidfVectorizer`  
-- `LogisticRegression` (with `liblinear` solver)
-
-### 6. **Evaluation**
-- Accuracy: **~70.75%**  
-- F1 Score: **~72%**
-- Visualization: Confusion Matrix using seaborn
-
-### 7. **Custom Predictions**
-You can input your own tweets and see the predicted sentiment.
-
----
-
-## 📊 Results Snapshot
-
-**Classification Report**
-```
-Precision: ~0.71
-Recall: ~0.71
-F1-Score: ~0.72
-```
-
-**Confusion Matrix**
-| Actual \ Predicted | Negative | Positive |
-|-------------------|----------|----------|
-| **Negative**       | 662      | 318      |
-| **Positive**       | 267      | 753      |
-
----
-
-## 🧠 Example Predictions
-
-```python
-"I love this product!" → Positive  
-"This is the worst experience ever." → Negative  
-"I'm feeling very happy today!" → Positive  
-"I hate when this happens." → Negative  
-```
-
----
-
-## 📌 Notes
-- You can increase dataset size for improved accuracy.
-- Can be extended using advanced models like LSTM or BERT.
-
----
-
-## 📁 Files
-- `Twitter Sentiment Analysis.ipynb` – Main notebook
+## Deployment
+Host on:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting service
