@@ -31,16 +31,6 @@ Modern portfolio website showcasing five interactive data visualization projects
 3. Scroll to trigger animations
 4. Click project links to view on CodePen
 
-## Customization
-- Replace placeholder images with project screenshots
-- Update social media links
-- Modify skill percentages
-- Adjust color scheme in CSS variables
-- Add/remove projects as needed
-
 ## Deployment
 Host on:
 - GitHub Pages
-- Netlify
-- Vercel
-- Any static hosting service
