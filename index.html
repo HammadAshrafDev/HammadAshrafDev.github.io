@@ -3,642 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hammad Ashraf | Data Visualization Portfolio</title>
+    <title>AI Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #94a3b8;
-            --accent: #f59e0b;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-            opacity: 0.3;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero {
-            padding: 4rem 0;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero h2 {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s forwards;
-            opacity: 0;
-        }
-        
-        .hero p {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            animation: fadeInUp 1s ease 0.4s forwards;
-            opacity: 0;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.6s forwards;
-            opacity: 0;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-3px);
-            color: var(--accent);
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--dark);
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin: 0.5rem;
-            border: none;
-            cursor: pointer;
-            animation: fadeInUp 1s ease 0.8s forwards;
-            opacity: 0;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary);
-        }
-        
-        /* Projects Section */
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            display: inline-block;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        .project-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .project-image {
-            height: 200px;
-            background-color: var(--gray);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.1);
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-        }
-        
-        .project-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .project-content p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .project-tag {
-            background-color: #e2e8f0;
-            color: var(--dark);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .project-link:hover {
-            color: var(--primary-dark);
-        }
-        
-        /* About Section */
-        .about {
-            background-color: #f1f5f9;
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-text h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .about-text p {
-            margin-bottom: 1rem;
-        }
-        
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        .skill {
-            background-color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .skill h4 {
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background-color: #e2e8f0;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background-color: var(--primary);
-            border-radius: 4px;
-            width: 0;
-            transition: width 1s ease;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .footer-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links a {
-            color: white;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-        
-        .copyright {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.2rem;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .skills {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="hero">
-                <h1>Hammad Ashraf</h1>
-                <h2>Computer Vision | AI Practitioner | GenAI Enthusiast</h2>
-                <p>Recent FAST University graduate specializing in Computer Vision. Passionate about AI, automation, and turning visual data into intelligent, real-world solutions. I build scalable tech that people rely on.</p>
-   
-                <div class="social-links">
-                    <a href="https://github.com/HammadAshrafDev" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/HammadAshrafDev/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="HammadAshrafDev"></i></a>
-                    <a href="#" target="_blank"><i class="HammadAshrafDev"></i></a>
-                </div>
-                
-                <a href="resume_HammadAshrafDev.pdf" class="btn">Download Resume</a>
-                <a href="#projects" class="btn btn-outline">View Projects</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">AI<span>Engineer</span></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </header>
-    
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Data Visualization Projects</h2>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Alex</span></h1>
+                <h2 class="hero-subtitle">AI Engineer & ML Specialist</h2>
+                <p class="hero-description">
+                    Building intelligent systems with deep learning, computer vision, 
+                    and natural language processing. Transforming complex problems into 
+                    elegant AI solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
             </div>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="TreeMap Visualization">
-                    </div>
-                    <div class="project-content">
-                        <h3>TreeMap</h3>
-                        <p>A hierarchical data visualization showing proportions and relationships between different categories.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">D3.js</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Data Visualization</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/raaNqMO" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/raaNqMO" target="_blank" class="project-link">
-                                <i class="fab fa-codepen"></i> CodePen
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Choropleth Map">
-                    </div>
-                    <div class="project-content">
-                        <h3>Choropleth Map</h3>
-                        <p>A geographic visualization showing spatial patterns and distributions across different regions.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">GeoJSON</span>
-                            <span class="project-tag">D3.js</span>
-                            <span class="project-tag">Mapping</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/oggNaxw" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/oggNaxw" target="_blank" class="project-link">
-                                <i class="fab fa-codepen"></i> CodePen
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="HeatMap">
-                    </div>
-                    <div class="project-content">
-                        <h3>HeatMap</h3>
-                        <p>A matrix-style visualization showing intensity patterns and correlations between variables.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">D3.js</span>
-                            <span class="project-tag">Color Scales</span>
-                            <span class="project-tag">Data Analysis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/PwwoyPa" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/PwwoyPa" target="_blank" class="project-link">
-                                <i class="fab fa-codepen"></i> CodePen
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="ScatterPlot">
-                    </div>
-                    <div class="project-content">
-                        <h3>ScatterPlot</h3>
-                        <p>A plot showing relationships between variables with interactive tooltips and axis controls.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">D3.js</span>
-                            <span class="project-tag">Interactive</span>
-                            <span class="project-tag">Data Correlation</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/zxxYmYv" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/zxxYmYv" target="_blank" class="project-link">
-                                <i class="fab fa-codepen"></i> CodePen
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Bar Chart">
-                    </div>
-                    <div class="project-content">
-                        <h3>Bar Chart</h3>
-                        <p>A classic visualization comparing categorical data with sorting and filtering capabilities.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">D3.js</span>
-                            <span class="project-tag">Bar Chart</span>
-                            <span class="project-tag">Data Comparison</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/raaNZEN" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                            <a href="https://codepen.io/Hammad-Ashraf-the-scripter/pen/raaNZEN" target="_blank" class="project-link">
-                                <i class="fab fa-codepen"></i> CodePen
-                            </a>
-                        </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="pfp.jpg" alt="AI Engineer" class="profile-pic">
+                    <div class="graphic-decoration">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-3"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<section class="section about">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>I'm a recent Data Science graduate from FAST University, focused on Computer Vision and deep learning. I specialize in turning visual data into intelligent automation and real-world applications.</p>
-                <p>With 5 years of content writing experience and leadership roles in communities like Devathon and AI Ignition, I bridge technical complexity and impactful storytelling to inspire action and adoption.</p>
-                <p>My mission is to build AI-powered, scalable systems that not only solve visual recognition problems but also drive real-world impact and revenue growth.</p>
-            </div>
-            <div class="skills">
-                <div class="skill">
-                    <h4>Computer Vision</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> ML/DL Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">OpenCV</span>
                     </div>
                 </div>
-                <div class="skill">
-                    <h4>Deep Learning</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Rust</span>
                     </div>
                 </div>
-                <div class="skill">
-                    <h4>Python</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <h4>OpenCV</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <h4>PyTorch</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 82%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <h4>AI/ML</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 78%"></div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> ML Ops</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">Airflow</span>
+                        <span class="skill-tag">AWS SageMaker</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <footer>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
-            <div class="footer-content">
-                <p>Let's collaborate on interesting data visualization projects!</p>
-                <div class="footer-links">
-                    <a href="https://github.com/IamHammadAshraf" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/hammad-ashraf/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fas fa-envelope"></i></a>
-                </div>
-                <p class="copyright">© 2023 Hammad Ashraf. All rights reserved.</p>
+            <h2 class="section-title">AI Projects</h2>
+            <div class="projects-grid" id="projectsContainer">
+                <!-- Projects will be loaded here by TypeScript -->
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>hammadashraf4314@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+92 313 4314711</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-kaggle"></i></a>
+            </div>
+            <p>&copy; 2024 AI Engineer Portfolio. All rights reserved.</p>
         </div>
     </footer>
-    
-    <script>
-        // Animate project cards on scroll
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        const animateOnScroll = () => {
-            projectCards.forEach((card, index) => {
-                const cardPosition = card.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (cardPosition < screenPosition) {
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                    }, index * 200);
-                }
-            });
-        };
-        
-        // Animate skill bars on scroll
-        const skillBars = document.querySelectorAll('.skill-progress');
-        
-        const animateSkillBars = () => {
-            skillBars.forEach(bar => {
-                const barPosition = bar.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (barPosition < screenPosition) {
-                    bar.style.width = bar.style.width; // This triggers the CSS transition
-                }
-            });
-        };
-        
-        window.addEventListener('scroll', () => {
-            animateOnScroll();
-            animateSkillBars();
-        });
-        
-        // Initialize animations when page loads
-        window.addEventListener('load', () => {
-            animateOnScroll();
-            animateSkillBars();
-        });
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
